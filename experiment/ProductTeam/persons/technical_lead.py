@@ -1,6 +1,10 @@
 from metagpt.actions import Action
 from metagpt.logs import logger
 from metagpt.roles import Role
+from metagpt.schema import Message
+from persons.product_manager import SimplePMWrite
+
+
 
 class SimpleTLWriter(Action):
     PROMPT_TEMPLATE: str = """
@@ -15,9 +19,7 @@ class SimpleTLWriter(Action):
 
         rsp = await self._aask(prompt)
 
-        code_text = parse_code(rsp)
-
-        return code_text
+        return rsp
 
 
 class SimpleTL(Role):

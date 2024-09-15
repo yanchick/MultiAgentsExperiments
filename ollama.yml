@@ -1,0 +1,7 @@
+llm:
+    api_type: "ollama"  # or azure / ollama / open_llm etc. Check LLMType for more options
+    model: "mistral-nemo:latest"  # or gpt-3.5-turbo-1106 / gpt-4-1106-preview
+    base_url: "http://127.0.0.1:11434/api"  # or forward url / other llm url
+    streaming: false
+repair_llm_output: true
+

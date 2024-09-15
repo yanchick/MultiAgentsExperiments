@@ -8,6 +8,11 @@ from metagpt.team import Team
 from persons.product_manager import SimplePM
 from persons.technical_lead import  SimpleTL
 
+from metagpt.config2 import Config
+import pathlib
+
+path = pathlib.Path(__file__).parent.parent.parent  / "ollama.yml"
+ollama = Config.from_yaml_file(path)
 
 
 async def main(
@@ -21,8 +26,8 @@ async def main(
     team = Team()
     team.hire(
         [
-            SimplePM(),
-            SimpleTL()
+            SimplePM(config=ollama),
+            SimpleTL(config=ollama)
         ]
     )
     team.run_project(idea)

@@ -1,3 +1,3 @@
-/logs/
-/metagpt/
-/workspace/
+*logs*
+*metagpt*
+*workspace*

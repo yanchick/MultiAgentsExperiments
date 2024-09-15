@@ -2,6 +2,7 @@
 from metagpt.actions import Action, UserRequirement
 from metagpt.logs import logger
 from metagpt.roles import Role
+from metagpt.schema import Message
 
 
 class SimplePMWrite(Action):
