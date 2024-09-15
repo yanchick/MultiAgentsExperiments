@@ -71,8 +71,9 @@ class SimpleTester(Role):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.set_actions([SimpleWriteTest])
+
         # self._watch([SimpleWriteCode])
-        self._watch([SimpleWriteCode, SimpleWriteReview])  # feel free to try this too
+        self._watch([SimpleWriteCode])  # feel free to try this too
 
     async def _act(self) -> Message:
         logger.info(f"{self._setting}: to do {self.rc.todo}({self.rc.todo.name})")
@@ -110,7 +111,7 @@ class SimpleReviewer(Role):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.set_actions([SimpleWriteReview])
-        self._watch([SimpleWriteTest])
+        #self._watch([SimpleWriteTest])
 
 
 async def main(
